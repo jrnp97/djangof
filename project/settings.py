@@ -38,12 +38,13 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
+    # Baterias Bateries-Include
+    'django.contrib.admin',  # Interfaz de administracion
+    'django.contrib.auth',  # Un sistema de authorizacion y authentacion
+    'django.contrib.contenttypes',  # sistema de Relaciones dinamicas.
+    'django.contrib.sessions', # Sistema para controlar sessiones de authenticacion stateful
+    'django.contrib.messages',  # sistema de "mensajes"
+    'django.contrib.staticfiles', # Sistema de manejo de archivos estaticos.
     'polls',
 ]
 
