@@ -17,6 +17,8 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('polls.urls'))
+    path('admin/', admin.site.urls),  # Las urls de la aplicacion admin comenzaran con /admin/
+    path('', include('polls.urls')),  # Las urls de la aplicacion polls comenzaran con /
+    # signature path('',
+    # path('', include('html.polls.urls')),
 ]
