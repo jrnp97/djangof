@@ -12,5 +12,14 @@
         <li>{{ qt.question_text }} | {{ qt.pub_data }}</li>
     {% endfor %}
 </ul>
+<hr>
+{{ form.as_p }}
+<hr>
+<h2>Deudor formulario</h2>
+<form method="GET">
+    {{ dform.as_p }}
+    <button type="submit">GO!</button>
+</form>
+
 </body>
 </html>
