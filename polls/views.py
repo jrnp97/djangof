@@ -73,3 +73,25 @@ def form_test(request):
             'dform': dform,
         }
     )
+
+
+# 1. View
+
+# forms: Utilizas instancias
+from .forms import ConvertForm
+def conversor_monedas(request):
+    print("HOLA ESTOY EXECUTANDO!!!")
+    print("REQUEST: ", request)
+    if request.method == 'POST':
+        form = ConvertForm(request.POST)
+        if form.is_valid():
+            print("DATOS VALIDOS!!!!")
+    else:
+        form = ConvertForm()
+    return render(
+        request=request,
+        template_name='polls/conversor.html',
+        context={
+            'form': form,
+        },
+    )

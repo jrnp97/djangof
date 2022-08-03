@@ -1,6 +1,15 @@
 
 from django.urls import path
-from .views import index, primer_template, template_raw, kiko, db_interact, form_test
+from .views import (
+    index,
+    primer_template,
+    template_raw,
+    kiko,
+    db_interact,
+    form_test,
+    conversor_monedas,
+)
+
 
 urlpatterns = [
     path('question/', db_interact, name='questions'),
@@ -10,5 +19,7 @@ urlpatterns = [
     # signature de path(ruta: str, view: funcion, name: str)
     # ruta: puede ser cualquiera que tu quieras, eso lo defines tu
     path('diego/', template_raw, name='template_raw'),
-    path('google/', form_test, name='google_form')
+    path('google/', form_test, name='google_form'),
+    # 2. Registrar la ruta
+    path('conversor/', conversor_monedas, name='conversor')
 ]
