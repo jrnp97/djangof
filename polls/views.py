@@ -154,3 +154,16 @@ class ConversorCBVTWO(FormView):
     form_class = ConvertForm
     template_name = 'polls/conversor.html'
 
+
+## CRUD Deudores
+
+def lista_deudores(request):
+    from .models import Deudor
+    deudores = Deudor.objects.all()
+    return render(
+        request=request,
+        template_name='polls/lista_deudores.html',
+        context={
+            'deudores': deudores,
+        }
+    )

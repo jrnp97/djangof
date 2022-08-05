@@ -8,6 +8,11 @@ from django.db import models
 # 1. Creas/Modificas o Eliminas algun ORM (Modelo)
 # 2. Creas una migracion: makemigrations <app>
 # 3. Aplicas los cambios en la base de datos: migrate <app>
+# 1. Crear deudores - CREATE
+# 2. Actualizar esos deudores - UPDATE
+# 3. Eliminar esos deudores - DELETE
+# 4. Observar un or los deudor(es) - READ (Individual y lista)
+# C.R.U.D
 class Deudor(models.Model):
     # Django automaticamente define el nombre de la tabla como: <appname>_<classename_minuscula>
     # 1. Definir el schema o la estructura de una tabla.
