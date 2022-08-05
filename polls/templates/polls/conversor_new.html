@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Conversor</title>
+</head>
+<body>
+<h1>CONVERSOR NEW</h1>
+<hr>
+<!-- action: la misma ruta de renderizacion -->
+<!-- method: GET (default value) -->
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="ENVIAR!!!">
+</form>
+<hr>
+</body>
+</html>
