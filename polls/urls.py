@@ -10,7 +10,7 @@ from .views import (
     db_interact,
     form_test,
     conversor_monedas,
-    ConversorCBV, ConversorNew, PrimerTemplateCBV, ConversorCBVTWO, lista_deudores
+    ConversorCBV, ConversorNew, PrimerTemplateCBV, ConversorCBVTWO, lista_deudores, create_deudor
 )
 
 
@@ -38,4 +38,5 @@ urlpatterns = [
     path('conversor_cbv/', ConversorCBVTWO.as_view(), name='conversor_cbv_two'),
 
     path('deudores/', lista_deudores, name='lista_deudores'),
+    path('deudores/new/', create_deudor, name='create_deudor'),
 ]

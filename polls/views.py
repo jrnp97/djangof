@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.template import loader
 
@@ -167,3 +167,24 @@ def lista_deudores(request):
             'deudores': deudores,
         }
     )
+
+
+def create_deudor(request):
+    from .forms import DeudorForm
+    if request.method == 'POST':
+        form = DeudorForm(request.POST)
+        if form.is_valid():
+            # Crear y guardar el deudor
+            form.save()
+            print("IS VALID")
+            return redirect('lista_deudores')
+    else:
+        form = DeudorForm()
+    return render(
+        request=request,
+        template_name='polls/crear_deudor.html',
+        context={
+            'form': form,
+        }
+    )
+

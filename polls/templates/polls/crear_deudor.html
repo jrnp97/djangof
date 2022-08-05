@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DEUDOR | CREACION</title>
+</head>
+<body>
+<h1>CREAR DEUDOR</h1><br>
+<button><a href="{% url 'lista_deudores' %}">LISTA DEUDORES</a></button>
+<hr>
+
+<form method="POST">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <input type="submit" value="CREAR!">
+</form>
+
+</body>
+</html>

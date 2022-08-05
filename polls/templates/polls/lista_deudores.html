@@ -5,7 +5,9 @@
     <title>DEUDORES | LISTA</title>
 </head>
 <body>
-<h1>DEUDORES</h1>
+<h1>DEUDORES</h1><br>
+<!-- FUNCIONES -->
+<button><a href="{% url 'create_deudor' %}">CREAR DEUDOR</a></button>
 <hr>
 <ul>
   {% for deudor in deudores %}
