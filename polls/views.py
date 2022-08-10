@@ -220,3 +220,9 @@ def update_deudor(request, id):
             'deudor': deudor,
         }
     )
+
+
+def delete_deudor(request, id):
+    deudor = Deudor.objects.get(id=id)
+    deudor.delete()
+    return redirect('lista_deudores')

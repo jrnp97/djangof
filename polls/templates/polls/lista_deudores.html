@@ -13,7 +13,8 @@
   {% for deudor in deudores %}
     <li>
         <a href="{% url 'detail_deudor' id=deudor.id %}">{{ deudor }}</a> |
-        <button><a href="{% url 'update_deudor' id=deudor.id %}">UPDATE</a></button>
+        <button><a href="{% url 'update_deudor' id=deudor.id %}">UPDATE</a></button> |
+        <button><a href="{% url 'delete_deudor' id=deudor.id %}">DELETE</a></button>
     </li>
   {% endfor %}
 </ul>
