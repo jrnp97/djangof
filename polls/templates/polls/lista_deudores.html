@@ -10,6 +10,7 @@
 <button><a href="{% url 'create_deudor' %}">CREAR DEUDOR</a></button>
 <hr>
 <ul>
+    <small>{{ jaime }}</small>
   {% for deudor in deudores %}
     <li>
         <a href="{% url 'detail_deudor' id=deudor.id %}">{{ deudor }}</a> |

@@ -157,48 +157,27 @@ class ConversorCBVTWO(FormView):
 
 ## CRUD Deudores
 
-def lista_deudores(request):
-    from .models import Deudor
-    deudores = Deudor.objects.all()
-    return render(
-        request=request,
-        template_name='polls/lista_deudores.html',
-        context={
-            'deudores': deudores,
-        }
-    )
+from django.views.generic import ListView, CreateView, DetailView
+
+class DeudoresList(ListView):
+    model = Deudor
+    template_name = 'polls/lista_deudores.html'
+    context_object_name = 'deudores'
+
+from django.urls import reverse_lazy
 
 
-def create_deudor(request):
-    from .forms import DeudorForm
-    if request.method == 'POST':
-        form = DeudorForm(request.POST)
-        if form.is_valid():
-            # Crear y guardar el deudor
-            form.save()
-            print("IS VALID")
-            return redirect('lista_deudores')
-    else:
-        form = DeudorForm()
-    return render(
-        request=request,
-        template_name='polls/crear_deudor.html',
-        context={
-            'form': form,
-        }
-    )
+class DeudoresCreate(CreateView):
+    form_class = DeudorForm
+    template_name = 'polls/crear_deudor.html'
+    success_url = reverse_lazy('lista_deudores')
 
 
-def detail_deudor(request, id):
-    deudor = Deudor.objects.get(id=id)
-    return render(
-        request=request,
-        template_name='polls/detail_deudor.html',
-        context={
-            'deudor': deudor,
-        }
-    )
-    # Buscar el recurso con el dato unico
+class DeudoresDetail(DetailView):
+    model = Deudor
+    template_name = 'polls/detail_deudor.html'
+    pk_url_kwarg = 'id'
+
 
 def update_deudor(request, id):
     deudor = Deudor.objects.get(id=id)
