@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DETAIL | DEUDOR</title>
+</head>
+<body>
+
+<h1>DETAIL DEUDOR ID: {{ deudor.id }}</h1>
+<button><a href="{% url 'lista_deudores' %}">LISTA DEUDORES</a></button>
+<hr>
+<h2>DATA</h2>
+<ul>
+    <li><b>NAME:</b> {{ deudor.name }}</li>
+    <li><b>APELLIDO:</b> {{ deudor.apellido }}</li>
+    <li><b>DEUDA:</b> {{ deudor.deuda }}</li>
+    <li><b>DATA ACTUALIZACION:</b> {{ deudor.data_de_actualizacion }}</li>
+</ul>
+</body>
+</html>

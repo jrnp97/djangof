@@ -7,7 +7,7 @@ from django.views import View # <- CLASE PADRE
 # Filosofia DRY: Don't repeat yourself
 
 # VIEW
-from polls.models import Question
+from polls.models import Question, Deudor
 
 
 def index(request):
@@ -188,3 +188,14 @@ def create_deudor(request):
         }
     )
 
+
+def detail_deudor(request, id):
+    deudor = Deudor.objects.get(id=id)
+    return render(
+        request=request,
+        template_name='polls/detail_deudor.html',
+        context={
+            'deudor': deudor,
+        }
+    )
+    # Buscar el recurso con el dato unico
