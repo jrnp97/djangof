@@ -199,3 +199,24 @@ def detail_deudor(request, id):
         }
     )
     # Buscar el recurso con el dato unico
+
+def update_deudor(request, id):
+    deudor = Deudor.objects.get(id=id)
+    if request.method == 'POST':
+        form = DeudorForm(request.POST, instance=deudor)
+        if form.is_valid():
+            # Actualizar el deudor
+            form.save()
+            print("IS VALID")
+            return redirect('lista_deudores')
+    else:
+        form = DeudorForm(instance=deudor)
+    return render(
+        request=request,
+        template_name='polls/crear_deudor.html',
+        context={
+            'form': form,
+            'update': True,
+            'deudor': deudor,
+        }
+    )
